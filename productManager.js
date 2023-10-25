@@ -1,7 +1,24 @@
+const fs = require('fs');
+
 class ProductManager {
-    constructor() {
+    constructor(path) {
+      this.path = path;
       this.products = [];
       this.productId = 1;
+    }
+
+    loadProducts() {
+      try {
+        const data = fs.readFileSync(this.path, 'utf8');
+        this.products = JSON.parse(data);
+      } catch (error) {
+        this.products = [];
+      }
+    }
+
+    saveProducts() {
+      const data = JSON.stringify(this.products, null, 2);
+      fs.writeFileSync(this.path, data, 'utf8');
     }
   
     addProduct(product) {
@@ -13,7 +30,7 @@ class ProductManager {
   
       // Campo "code" no esté repetido
       if (this.products.some(p => p.code === product.code)) {
-        console.log("Error: El código ya existee");
+        console.log("Error: El código ya existe");
         return;
       }
   
@@ -21,9 +38,37 @@ class ProductManager {
       product.id = this.productId;
       this.products.push(product);
       this.productId++;
-  
+
+      this.saveProducts(); // Guardar los productos en el archivo
       console.log('Producto agregado correctamente');
     }
+
+    updateProduct(id, updatedProduct) {
+      const productIndex = this.products.findIndex(p => p.id === id);
+    
+      if (productIndex === -1) {
+        console.log("Producto no encontrado");
+        return;
+      }
+    
+      this.products[productIndex] = { ...this.products[productIndex], ...updatedProduct };
+      this.saveProducts(); // Guardar los productos en el archivo
+      console.log('Producto actualizado correctamente');
+    }
+    
+    deleteProduct(id) {
+      const productIndex = this.products.findIndex(p => p.id === id);
+    
+      if (productIndex === -1) {
+        console.log("Producto no encontrado");
+        return;
+      }
+    
+      this.products.splice(productIndex, 1);
+      this.saveProducts(); // Guardar los productos en el archivo
+      console.log('Producto eliminado correctamente');
+    }
+    
   
     getProducts() {
       return this.products;
@@ -41,7 +86,7 @@ class ProductManager {
   }
   
   // Ejemplo
-  const productManager = new ProductManager();
+  const productManager = new ProductManager('product.json');
   
   // Agregar productos
   productManager.addProduct({
