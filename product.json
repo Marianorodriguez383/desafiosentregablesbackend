@@ -16,5 +16,69 @@
     "code": "002",
     "stock": 3,
     "id": 2
+  },{
+    "title": "Producto C",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "003",
+    "stock": 3,
+    "id": 3
+  },{
+    "title": "Producto D",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "004",
+    "stock": 3,
+    "id": 4
+  },{
+    "title": "Producto E",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "005",
+    "stock": 3,
+    "id": 5
+  },{
+    "title": "Producto F",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "006",
+    "stock": 3,
+    "id": 6
+  },{
+    "title": "Producto G",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "007",
+    "stock": 3,
+    "id": 7
+  },{
+    "title": "Producto H",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "008",
+    "stock": 3,
+    "id": 8
+  },{
+    "title": "Producto I",
+    "description": "Descripción del producto B",
+    "price": 1000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "009",
+    "stock": 3,
+    "id": 9
+  },{
+    "title": "Producto J",
+    "description": "Descripción del producto B",
+    "price": 13000,
+    "thumbnail": "ruth/imagenB.jpg",
+    "code": "010",
+    "stock": 3,
+    "id": 10
   }
 ]

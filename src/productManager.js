@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-class ProductManager {
+export default class ProductManager {
     constructor(path) {
       this.path = path;
       this.products = [];
@@ -84,9 +84,12 @@ class ProductManager {
       }
     }
   }
-  
+ 
+  // const productManager = new ProductManager('product.json');
+
+  /* 
   // Ejemplo
-  const productManager = new ProductManager('product.json');
+ 
   
   // Agregar productos
   productManager.addProduct({
@@ -107,6 +110,8 @@ class ProductManager {
     stock: 3
   });
   
+
+ 
   // Obtener todos los productos
   const allProducts = productManager.getProducts();
   console.log(allProducts);
@@ -115,4 +120,4 @@ class ProductManager {
   const productById = productManager.getProductById(1);
   console.log(productById);
   
-  const nonExistentProduct = productManager.getProductById(3); // Producto no existente
+  const nonExistentProduct = productManager.getProductById(3); // Producto no existente*/
