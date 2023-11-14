@@ -1,4 +1,44 @@
-import express from "express"; 
+
+import express from 'express';
+import productsRoutes from './routes/productsRoutes.js';
+
+import cartsRoutes from './routes/cartsRoutes.js';
+
+const app = express();
+const PORT = 8080;
+
+app.use('/products', productsRoutes);
+app.use('/carts', cartsRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Servidor express activo en el puerto ${PORT}`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import express from "express"; 
 import ProductManager from "./productManager.js";
 
 const app = express()
@@ -36,5 +76,7 @@ app.get('/products/:pid', (req, res) => {
       res.status(404).json({ message: 'Producto no encontrado' });
     }
   });
+
+*/
 
 
