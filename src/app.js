@@ -1,11 +1,12 @@
-
 import express from 'express';
 import productsRoutes from './routes/productsRoutes.js';
-
 import cartsRoutes from './routes/cartsRoutes.js';
 
-const app = express();
 const PORT = 8080;
+
+const app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.use('/products', productsRoutes);
 app.use('/carts', cartsRoutes);

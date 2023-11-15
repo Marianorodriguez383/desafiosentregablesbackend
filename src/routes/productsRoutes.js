@@ -11,8 +11,10 @@ productManager.loadProducts();
 router.get('/api/products/', (req, res) => {
   // Obtener todos los productos de la base
   const products = productManager.getProducts();
+  console.log(products); // Agrega esta línea para imprimir los productos en la consola
   res.json(products);
 });
+
 
 router.get('/api/products/:pid', (req, res) => {
   // Obtener un producto por su ID

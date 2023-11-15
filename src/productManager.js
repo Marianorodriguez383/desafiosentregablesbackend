@@ -11,10 +11,13 @@ export default class ProductManager {
       try {
         const data = fs.readFileSync(this.path, 'utf8');
         this.products = JSON.parse(data);
+        
       } catch (error) {
         this.products = [];
+        console.error('Error al cargar productos:', error.message);
       }
     }
+    
 
     saveProducts() {
       const data = JSON.stringify(this.products, null, 2);
