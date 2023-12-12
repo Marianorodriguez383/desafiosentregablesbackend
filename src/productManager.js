@@ -29,6 +29,8 @@ export default class ProductManager {
       if (!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock) {
         console.log("Error: Todos los campos son obligatorios");
         return;
+        // Emitir evento de socket cuando se agrega un producto
+        io.emit('productAdded', product);
       }
   
       // Campo "code" no esté repetido
@@ -70,6 +72,9 @@ export default class ProductManager {
       this.products.splice(productIndex, 1);
       this.saveProducts(); // Guardar los productos en el archivo
       console.log('Producto eliminado correctamente');
+
+      // Emitir evento de socket cuando se elimina un producto
+      io.emit('productDeleted');
     }
     
   
